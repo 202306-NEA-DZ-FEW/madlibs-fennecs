@@ -1,4 +1,4 @@
-/* *
+/**
  * Complete the implementation of parseStory.
  * 
  * parseStory retrieves the story as a single string from story.txt
@@ -24,73 +24,12 @@
  *  ....
  * 
  * There are multiple ways to do this, but you may want to use regular expressions.
- * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/ */
-
-
-
-/**
- * A function that retrieves the story from story.txt and return an array of objects
- * @param {String}  rawStory: string 
- * @returns {Array<Objetc>} wordsObjetct: Array of objetcs
+ * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/
  */
 function parseStory(rawStory) {
-  /* *
-   * An Object to maps part of speech codes to their corresponding labels
-   */
-  const partOfSpeech = {
-    n: "noun",
-    v: "verb",
-    a: "adjective",
-
-  }
-
-  /**
-   * Regex matches words with part of speech codes (e.g., "word[pos]") 
-   * Or just words
-   * 
-   */
-  const matchWordsRegex = /\w+\[([a-z]+)\]|\w+|[.,!?]/g
-
-
-  /**
-   * Regex to match the format "word[pos]" 
-   * And captures both the word and the part of speech code.
-   */
-  const matchPosRegex = /(\w+)\[([a-z]+)\]/
-
-  return rawStory.match(matchWordsRegex)
-    .map(word => {
-
-      /**
-       * Get pos match : word[pos] 
-       * And captures both the word and the part of speech code. 
-       */
-      const match = word.match(matchPosRegex)
-
-      /**
-       * create wordsObjetct objetc 
-       * Set word field to the extracted word match[1] if there is one
-       * Or else simply set it to word 
-       */
-      const wordsObjetct = { word: match ? match[1] : word }
-
-
-      /**
-       * Checks if a match exists 
-       * and if the extracted part of speech code (match[2]) 
-       * has a corresponding entry in the partOfSpeech {a,v,n}
-       * if so we set pos field to partOfSpeech[match[2]] .
-       */
-      if (match && partOfSpeech[match[2]]) {
-        wordsObjetct.pos = partOfSpeech[match[2]];
-      }
-
-      return wordsObjetct;
-    })
-
+  // Your code here.
+  return {}; // This line is currently wrong :)
 }
-
-
 
 /**
  * All your other JavaScript code goes here, inside the function. Don't worry about
