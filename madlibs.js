@@ -30,8 +30,8 @@
 
 /**
  * A function that retrieves the story from story.txt and return an array of objects
- * @param {*} rawStory string 
- * @returns {wordsObjetct} Array of objetcs
+ * @param {String}  rawStory: string 
+ * @returns {Array<Objetc>} wordsObjetct: Array of objetcs
  */
 function parseStory(rawStory) {
   /* *
@@ -98,7 +98,6 @@ function parseStory(rawStory) {
  * 
  * You'll want to use the results of parseStory() to display the story on the page.
  */
-console.log(getRawStory())
 getRawStory().then(parseStory).then((processedStory) => {
   console.log(processedStory);
 });
