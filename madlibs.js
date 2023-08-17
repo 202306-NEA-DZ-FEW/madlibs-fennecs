@@ -41,6 +41,7 @@ function parseStory(rawStory) {
     n: "[noun]",
     v: "[verb]",
     a: "[adjectif]",
+    ad: "[adverb]",
 
   }
 
