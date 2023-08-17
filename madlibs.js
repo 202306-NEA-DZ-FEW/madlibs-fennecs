@@ -89,7 +89,8 @@ function parseStory(rawStory) {
     })
 
 }
-
+let madLibsEdit=document.querySelector(".madLibsEdit")
+let madLibsPreview=document.querySelector(".madLibsPreview")
 
 
 /**
@@ -100,4 +101,30 @@ function parseStory(rawStory) {
  */
 getRawStory().then(parseStory).then((processedStory) => {
   console.log(processedStory);
+
+  processedStory.map(item=>{
+    console.log(item)
+    const span_1=document.createElement('span')
+    const span_2=document.createElement('span')
+    const input=document.createElement('input')
+    const mark=document.createElement('mark')
+    input.type = "text";
+    input.maxLength = 20;
+    if(item.hasOwnProperty('pos')){
+      input.placeholder=item.pos
+      input.addEventListener("keydown",()=>{
+        mark.innerText=input.value
+      })
+      madLibsEdit.appendChild(input)
+      madLibsPreview.appendChild(mark)
+    }else{
+      span_1.innerText=item.word+' '
+      span_2.innerText=item.word+' '
+      madLibsEdit.appendChild(span_1)
+      madLibsPreview.appendChild(span_2)
+
+    }
+  })
+
+
 });
