@@ -50,14 +50,14 @@ function parseStory(rawStory) {
    * Or just words
    * 
    */
-  const matchWordsRegex = /\w+\[[anv]+\]|[.,]|\w+/g
+  const matchWordsRegex = /\w+\[[anvad]+\]|[.,]|\w+/g
 
 
   /**
    * Regex to match the format "word[pos]" 
    * And captures both the word and the part of speech code.
    */
-  const matchPosRegex = /(\w+)\[([anv]+)\]/
+  const matchPosRegex = /(\w+)\[([anvad]+)\]/
 
   return rawStory.match(matchWordsRegex)
     .map(word => {
@@ -115,7 +115,7 @@ getRawStory().then(parseStory).then((processedStory) => {
     input.maxLength = 20;
 
     if (item.hasOwnProperty('pos')) {
-      input.placeholder = `${item.word} ${[item.pos]}`
+      input.placeholder = item.pos
       input.addEventListener("input", () => {
 
         input.value ? mark.innerText = input.value : mark.innerText = item.word
