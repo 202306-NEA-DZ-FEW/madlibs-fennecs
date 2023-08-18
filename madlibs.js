@@ -101,8 +101,6 @@ let madLibsPreview = document.querySelector(".madLibsPreview")
  * You'll want to use the results of parseStory() to display the story on the page.
  */
 getRawStory().then(parseStory).then((processedStory) => {
-  console.log(processedStory);
-
   processedStory.map(item => {
     //console.log(item)
     const span_1 = document.createElement('span')
@@ -110,6 +108,7 @@ getRawStory().then(parseStory).then((processedStory) => {
     const input = document.createElement('input')
     const mark = document.createElement('mark')
     mark.innerText = item.word
+    mark.setAttribute('data_default', item.word)
 
     input.type = "text";
     input.maxLength = 20;
@@ -172,4 +171,20 @@ theme_button.addEventListener("click",()=>{
   madLibsEdit.classList.toggle('madlibs_dark')
   madLibsPreview.classList.toggle('madlibs_dark')
 
+})
+
+const reset=document.querySelector('#reset')
+
+console.log(reset)//#endregion
+
+reset.addEventListener("click",()=>{
+  const all_input=document.querySelectorAll('input')
+  const all_mark=document.querySelectorAll('mark')
+  console.log(all_input)
+  all_input.forEach(item=>{
+    item.value=''
+  })
+  all_mark.forEach(item=>{
+    item.innerText=item.getAttribute('data_default')
+  })
 })
