@@ -146,12 +146,23 @@ getRawStory().then(parseStory).then((processedStory) => {
       madLibsPreview.appendChild(span_2)
 
     }
+    // Entre button fonctionality 
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach((input, index) => {
+        input.addEventListener('keyup', function(event) {
+            if (event.code === 'Enter') {
+                event.preventDefault(); // Prevent default Enter key behavior
+                const nextIndex = (index + 1) % inputs.length;
+                inputs[nextIndex].focus(); // Move focus to the next input
+            }
+        });
+    });
 
   })
 
 
 });
-
+ // Manage theme fonctionality (Dark mode ,Ligth mode)
 let theme_button=document.querySelector("#themeIcon")
 let h1=document.querySelector('h1')
 let body=document.querySelector('body')
@@ -173,14 +184,13 @@ theme_button.addEventListener("click",()=>{
 
 })
 
+// reset button fonctionality
 const reset=document.querySelector('#reset')
-
-console.log(reset)//#endregion
+//#endregion
 
 reset.addEventListener("click",()=>{
   const all_input=document.querySelectorAll('input')
   const all_mark=document.querySelectorAll('mark')
-  console.log(all_input)
   all_input.forEach(item=>{
     item.value=''
   })
@@ -188,3 +198,5 @@ reset.addEventListener("click",()=>{
     item.innerText=item.getAttribute('data_default')
   })
 })
+
+
