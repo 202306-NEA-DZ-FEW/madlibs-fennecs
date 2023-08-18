@@ -113,6 +113,7 @@ getRawStory().then(parseStory).then((processedStory) => {
 
     input.type = "text";
     input.maxLength = 20;
+    input.classList.add("input"); // Adding the "input" class to the input element
 
     if (item.hasOwnProperty('pos')) {
       input.placeholder = item.pos
@@ -120,8 +121,24 @@ getRawStory().then(parseStory).then((processedStory) => {
 
         input.value ? mark.innerText = input.value : mark.innerText = item.word
       })
-      madLibsEdit.appendChild(input)
+   
+
+   madLibsEdit.appendChild(input)
       madLibsPreview.appendChild(mark)
+
+       // Implement hotkey feature on enter key 
+       const inputs = document.querySelectorAll(".input");
+       inputs.forEach((input, index) => {
+         input.addEventListener("keydown", (event) => {
+           if (event.key === "Enter") { // If the pressed key is "Enter"
+             event.preventDefault(); // Prevent the default behavior of the "Enter" key
+             const nextIndex = index + 1;
+             if (nextIndex < inputs.length) {
+               inputs[nextIndex].focus(); // Set focus to the next input field
+             }
+           }
+         });
+       });
     } else {
 
       span_1.innerText = item.word + ' '
