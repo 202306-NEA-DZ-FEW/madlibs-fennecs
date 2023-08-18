@@ -38,9 +38,10 @@ function parseStory(rawStory) {
    * An Object to maps part of speech codes to their corresponding labels
    */
   const partOfSpeech = {
-    n: "noun",
-    v: "verb",
-    a: "adjective",
+    n: "[noun]",
+    v: "[verb]",
+    a: "[adjectif]",
+    ad: "[adverb]",
 
   }
 
@@ -49,14 +50,14 @@ function parseStory(rawStory) {
    * Or just words
    * 
    */
-  const matchWordsRegex = /\w+\[([a-z]+)\]|\w+|[.,!?]/g
+  const matchWordsRegex = /\w+\[[anvad]+\]|[.,]|\w+/g
 
 
   /**
    * Regex to match the format "word[pos]" 
    * And captures both the word and the part of speech code.
    */
-  const matchPosRegex = /(\w+)\[([a-z]+)\]/
+  const matchPosRegex = /(\w+)\[([anvad]+)\]/
 
   return rawStory.match(matchWordsRegex)
     .map(word => {
@@ -89,8 +90,8 @@ function parseStory(rawStory) {
     })
 
 }
-let madLibsEdit=document.querySelector(".madLibsEdit")
-let madLibsPreview=document.querySelector(".madLibsPreview")
+let madLibsEdit = document.querySelector(".madLibsEdit")
+let madLibsPreview = document.querySelector(".madLibsPreview")
 
 
 /**
@@ -102,28 +103,34 @@ let madLibsPreview=document.querySelector(".madLibsPreview")
 getRawStory().then(parseStory).then((processedStory) => {
   console.log(processedStory);
 
-  processedStory.map(item=>{
-    console.log(item)
-    const span_1=document.createElement('span')
-    const span_2=document.createElement('span')
-    const input=document.createElement('input')
-    const mark=document.createElement('mark')
+  processedStory.map(item => {
+    //console.log(item)
+    const span_1 = document.createElement('span')
+    const span_2 = document.createElement('span')
+    const input = document.createElement('input')
+    const mark = document.createElement('mark')
+    mark.innerText = item.word
+
     input.type = "text";
     input.maxLength = 20;
-    if(item.hasOwnProperty('pos')){
-      input.placeholder=item.pos
-      input.addEventListener("keydown",()=>{
-        mark.innerText=input.value
+
+    if (item.hasOwnProperty('pos')) {
+      input.placeholder = item.pos
+      input.addEventListener("input", () => {
+
+        input.value ? mark.innerText = input.value : mark.innerText = item.word
       })
       madLibsEdit.appendChild(input)
       madLibsPreview.appendChild(mark)
-    }else{
-      span_1.innerText=item.word+' '
-      span_2.innerText=item.word+' '
+    } else {
+
+      span_1.innerText = item.word + ' '
+      span_2.innerText = item.word + ' '
       madLibsEdit.appendChild(span_1)
       madLibsPreview.appendChild(span_2)
 
     }
+
   })
 
 
