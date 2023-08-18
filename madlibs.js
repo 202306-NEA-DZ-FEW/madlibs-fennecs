@@ -115,7 +115,7 @@ getRawStory().then(parseStory).then((processedStory) => {
     input.maxLength = 20;
 
     if (item.hasOwnProperty('pos')) {
-      input.placeholder = `${item.word} ${[item.pos]}`
+      input.placeholder = item.pos
       input.addEventListener("input", () => {
 
         input.value ? mark.innerText = input.value : mark.innerText = item.word
