@@ -135,3 +135,24 @@ getRawStory().then(parseStory).then((processedStory) => {
 
 
 });
+
+let theme_button=document.querySelector("#themeIcon")
+let h1=document.querySelector('h1')
+let body=document.querySelector('body')
+
+theme_button.addEventListener("click",()=>{
+  console.log(theme_button.firstElementChild.innerText)
+  const materialIcon = document.createElement('i');
+ 
+  if(theme_button.firstElementChild.innerText ==="brightness_4"){
+    theme_button.firstElementChild.innerText="dark_mode"
+    
+  }else{
+    theme_button.firstElementChild.innerText="brightness_4"
+  }
+  h1.classList.toggle('h1_dark')
+  body.classList.toggle('body_dark')
+  madLibsEdit.classList.toggle('madlibs_dark')
+  madLibsPreview.classList.toggle('madlibs_dark')
+
+})

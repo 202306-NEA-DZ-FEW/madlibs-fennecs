@@ -186,12 +186,66 @@
     justify-content: center;
     align-items: center;
  }
+ #themeIcon{
+  color: blue;
+  position: absolute;
+  font-size: 2rem;
+  right: 60px;
 
- @keyframes glow {
-    0% {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #bb2136, 0 0 40px #bb2136, 0 0 50px #bb2136, 0 0 60px #bb2136, 0 0 70px #bb2136;
-    }
-    100% {
-        text-shadow: 0 0 20px #fff, 0 0 30px #14a423, 0 0 40px #14a423, 0 0 50px #14a423, 0 0 60px #14a423, 0 0 70px #14a423, 0 0 80px #14a423;
-    }
+ }
+ .madlibs_dark{
+  color: black;
+   background-color: #f8f8f8;
+   animation: glow_border 1s ease-in-out infinite alternate;
+}
+.h1_dark{
+color: black;
+}
+.body_dark{
+filter: invert(1);
+}
+
+
+
+/* Medium screens (tablets and smaller laptops) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  main{
+    padding: 0 70px;
+    flex-direction: column;
+ }
+ .madLibsEdit ,.madLibsPreview{
+    margin: 50px 20px;
+ }
+}
+
+@media (max-width: 767px) {
+  main{
+    padding: 0 70px;
+    flex-direction: column;
+ }
+ h1{
+  font-size: 40px;
+ }
+ .madLibsEdit ,.madLibsPreview{
+    margin: 50px 20px;
+    font-size: 15px;
+ }
+}
+
+
+@keyframes glow {
+  0% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #bb2136, 0 0 40px #bb2136, 0 0 50px #bb2136, 0 0 60px #bb2136, 0 0 70px #bb2136;
   }
+  100% {
+      text-shadow: 0 0 20px #fff, 0 0 30px #14a423, 0 0 40px #14a423, 0 0 50px #14a423, 0 0 60px #14a423, 0 0 70px #14a423, 0 0 80px #14a423;
+  }
+}
+@keyframes glow_border {
+  0% {
+      box-shadow: 0 0 0px 10px #bb2136;
+      }
+  100% {
+      box-shadow: 0 0 0px 10px #14a423;
+      }
+}
