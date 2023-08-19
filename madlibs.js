@@ -120,24 +120,24 @@ getRawStory().then(parseStory).then((processedStory) => {
 
         input.value ? mark.innerText = input.value : mark.innerText = item.word
       })
-   
 
-   madLibsEdit.appendChild(input)
+
+      madLibsEdit.appendChild(input)
       madLibsPreview.appendChild(mark)
 
-       // Implement hotkey feature on enter key 
-       const inputs = document.querySelectorAll(".input");
-       inputs.forEach((input, index) => {
-         input.addEventListener("keydown", (event) => {
-           if (event.key === "Enter") { // If the pressed key is "Enter"
-             event.preventDefault(); // Prevent the default behavior of the "Enter" key
-             const nextIndex = index + 1;
-             if (nextIndex < inputs.length) {
-               inputs[nextIndex].focus(); // Set focus to the next input field
-             }
-           }
-         });
-       });
+      // Implement hotkey feature on enter key 
+      const inputs = document.querySelectorAll(".input");
+      inputs.forEach((input, index) => {
+        input.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") { // If the pressed key is "Enter"
+            event.preventDefault(); // Prevent the default behavior of the "Enter" key
+            const nextIndex = index + 1;
+            if (nextIndex < inputs.length) {
+              inputs[nextIndex].focus(); // Set focus to the next input field
+            }
+          }
+        });
+      });
     } else {
 
       span_1.innerText = item.word + ' '
@@ -149,58 +149,58 @@ getRawStory().then(parseStory).then((processedStory) => {
     // Entre button fonctionality 
     const inputs = document.querySelectorAll('input');
     inputs.forEach((input, index) => {
-        input.addEventListener('keyup', function(event) {
-            if (event.code === 'Enter') {
-                event.preventDefault(); // Prevent default Enter key behavior
-                const nextIndex = (index + 1) % inputs.length;
-                inputs[nextIndex].focus(); // Move focus to the next input
-            }
-        });
+      input.addEventListener('keyup', function (event) {
+        if (event.code === 'Enter') {
+          event.preventDefault(); // Prevent default Enter key behavior
+          const nextIndex = (index + 1) % inputs.length;
+          inputs[nextIndex].focus(); // Move focus to the next input
+        }
+      });
     });
 
   })
 
 
 });
- // Manage theme fonctionality (Dark mode ,Ligth mode)
-let theme_button=document.querySelector("#themeIcon")
-let h1=document.getElementById('heading')
-let body=document.querySelector('body')
-let isLightmode=false  // by default the dark mode is on 
-theme_button.addEventListener("click",()=>{
- 
+// Manage theme fonctionality (Dark mode ,Ligth mode)
+let theme_button = document.querySelector("#themeIcon")
+let h1 = document.getElementById('heading')
+let body = document.querySelector('body')
+let isLightmode = false  // by default the dark mode is on 
+theme_button.addEventListener("click", () => {
 
 
 
-  if(isLightmode){
+
+  if (isLightmode) {
     //dark mode codes lies here
-    
-    theme_button.innerHTML = '<img src="./assets/sun.png" title="Bring up the light! ">'; 
+
+    theme_button.innerHTML = '<img src="./assets/sun.png" title="Bring up the light! ">';
     body.classList.remove('body_light');
-    isLightmode=false;
+    isLightmode = false;
     madLibsEdit.classList.remove('madlibs_dark')
     madLibsPreview.classList.add('madlibs_dark')
-    
-    
-    
 
-  }else{
+
+
+
+  } else {
     //light mode codes lies here
-    
+
     theme_button.innerHTML = '<img src="./assets/moon.png" title="Darkness consumes!">'; // change icon
     body.classList.add('body_light');
     madLibsEdit.classList.add('madlibs_dark')
     madLibsPreview.classList.remove('madlibs_dark')
     /**add the rest changes */
 
-    isLightmode=true;
-    
-    
-    
+    isLightmode = true;
 
-    
-    
-    
+
+
+
+
+
+
 
 
 
@@ -212,58 +212,62 @@ theme_button.addEventListener("click",()=>{
 
 
   // const materialIcon = document.createElement('i');
- 
+
   // if(theme_button.firstElementChild.innerText ==="brightness_4"){
   //   theme_button.firstElementChild.innerText="dark_mode"
-    
+
   // }else{
   //   theme_button.firstElementChild.innerText="brightness_4"
   // }
-  
+
 
 })
 
 
 
 // reset button fonctionality
-const reset=document.querySelector('#reset')
+const reset = document.querySelector('#reset')
 //#endregion
 
-reset.addEventListener("click",()=>{
-  const all_input=document.querySelectorAll('input')
-  const all_mark=document.querySelectorAll('mark')
-  all_input.forEach(item=>{
-    item.value=''
+reset.addEventListener("click", () => {
+  const all_input = document.querySelectorAll('input')
+  const all_mark = document.querySelectorAll('mark')
+  all_input.forEach(item => {
+    item.value = ''
   })
-  all_mark.forEach(item=>{
-    item.innerText=item.getAttribute('data_default')
+  all_mark.forEach(item => {
+    item.innerText = item.getAttribute('data_default')
   })
 })
 
-/*Adding Sound functionality*/ 
+/*Adding Sound functionality*/
 
 /*The DOMContentLoaded event fires when the DOM content is loaded,
- without waiting for images and stylesheets to finish loading.*/ 
+ without waiting for images and stylesheets to finish loading.*/
 
- 
-document.addEventListener("DOMContentLoaded",  () => {
+
+document.addEventListener("DOMContentLoaded", () => {
   const soundButton = document.getElementById("soundButton");
   const sound = document.getElementById("sound");
 
   let isPlaying = false; //by default the sound is off
 
   soundButton.addEventListener("click", function () {
-      if (isPlaying) {
-          sound.pause();
-          sound.currentTime = 0; // plays from the begining 
-          isPlaying = false;
-          soundButton.innerHTML = '<img src="./assets/sound.png" title="Play Sound">'; // change icon
-      } else {
-          sound.play();
-          isPlaying = true;
-          soundButton.innerHTML = '<img src="./assets/sleep.png" title="Pause Sound">';
-      }
+    if (isPlaying) {
+      sound.pause();
+      sound.currentTime = 0; // plays from the begining 
+      isPlaying = false;
+      soundButton.innerHTML = '<img src="./assets/sound.png" title="Play Sound">'; // change icon
+    } else {
+      sound.play();
+      isPlaying = true;
+      soundButton.innerHTML = '<img src="./assets/sleep.png" title="Pause Sound">';
+    }
   });
+
+
+
+
 });
 
 

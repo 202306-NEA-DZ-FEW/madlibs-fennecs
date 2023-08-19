@@ -4,23 +4,19 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="viewport"
-    content="width=device-width">
+  <meta name="viewport" content="width=device-width">
   <title>The Cosmic Party | By Fennecs Team</title>
   <link rel="icon" type="image/x-icon" href="/assets/faviconLast.png"> <!--added a favicon from assets-->
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-  <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
 </head>
 
 <body>
   <div class="container">
     <div class="icons">
-      
+
       <div class="icon1"></div>
       <div class="icon2"></div>
       <div class="icon3"></div>
@@ -30,32 +26,45 @@
       <div class="icon7"></div>
       <div class="icon8"></div>
     </div>
-    
-      <button id="themeIcon"><img src="./assets/sun.png" title="Dark/Light Mode"></button>
+
+    <button id="themeIcon"><img src="./assets/sun.png" title="Dark/Light Mode"></button>
 
     <h1>Planets Party </h1>
     <main>
 
-      <div class="madLibsEdit" ></div>
-      
-      <div class="madLibsPreview" ></div>
+      <div class="madLibsEdit"></div>
+
+      <div class="madLibsPreview"></div>
     </main>
     <div class="button_content">
-      <button class="button" ><img src="./assets/save.png" title="Save"></button>
+      <button class="button"><img src="./assets/save.png" title="Save"></button>
       <button class="button" id="reset"><img src="./assets/reset.png" title="Reset"></button>
-      <button class="button"><img src="./assets/translate.png" title="translate"></button>
-      <button  class="button" id="soundButton">
+      <button class="button" id="google_translate_element"><img src="./assets/translate.png" title="translate"></button>
+      <button class="button" id="soundButton">
         <img src="./assets/sound.png" title="Play Sound">
-    </button>
-    
+      </button>
+
     </div>
-    
+
   </div>
   <audio id="sound">
     <source src="./assets/SpaceGroove.mp3" type="audio/mpeg">
-</audio>
+  </audio>
   <script src="do-not-touch.js"></script>
   <script src="madlibs.js"></script>
+
+  <!-- This 2 scripts are for the translation -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+        'google_translate_element'
+      );
+    }
+  </script>
+
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
