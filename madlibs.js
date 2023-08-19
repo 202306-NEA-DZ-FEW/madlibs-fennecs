@@ -164,25 +164,66 @@ getRawStory().then(parseStory).then((processedStory) => {
 });
  // Manage theme fonctionality (Dark mode ,Ligth mode)
 let theme_button=document.querySelector("#themeIcon")
-let h1=document.querySelector('h1')
+let h1=document.getElementById('heading')
 let body=document.querySelector('body')
-
+let isLightmode=false  // by default the dark mode is on 
 theme_button.addEventListener("click",()=>{
-  
-  const materialIcon = document.createElement('i');
  
-  if(theme_button.firstElementChild.innerText ==="brightness_4"){
-    theme_button.firstElementChild.innerText="dark_mode"
+
+
+
+  if(isLightmode){
+    //dark mode codes lies here
     
+    theme_button.innerHTML = '<img src="./assets/sun.png" title="Bring up the light! ">'; 
+    body.classList.remove('body_light');
+    isLightmode=false;
+    madLibsEdit.classList.remove('madlibs_dark')
+    madLibsPreview.classList.add('madlibs_dark')
+    
+    
+    
+
   }else{
-    theme_button.firstElementChild.innerText="brightness_4"
+    //light mode codes lies here
+    
+    theme_button.innerHTML = '<img src="./assets/moon.png" title="Darkness consumes!">'; // change icon
+    body.classList.add('body_light');
+    madLibsEdit.classList.add('madlibs_dark')
+    madLibsPreview.classList.remove('madlibs_dark')
+    /**add the rest changes */
+
+    isLightmode=true;
+    
+    
+    
+
+    
+    
+    
+
+
+
   }
-  h1.classList.toggle('h1_dark')
-  body.classList.toggle('body_dark')
-  madLibsEdit.classList.toggle('madlibs_dark')
-  madLibsPreview.classList.toggle('madlibs_dark')
+
+
+
+
+
+
+  // const materialIcon = document.createElement('i');
+ 
+  // if(theme_button.firstElementChild.innerText ==="brightness_4"){
+  //   theme_button.firstElementChild.innerText="dark_mode"
+    
+  // }else{
+  //   theme_button.firstElementChild.innerText="brightness_4"
+  // }
+  
 
 })
+
+
 
 // reset button fonctionality
 const reset=document.querySelector('#reset')
@@ -198,5 +239,31 @@ reset.addEventListener("click",()=>{
     item.innerText=item.getAttribute('data_default')
   })
 })
+
+/*Adding Sound functionality*/ 
+
+/*The DOMContentLoaded event fires when the DOM content is loaded,
+ without waiting for images and stylesheets to finish loading.*/ 
+
+ 
+document.addEventListener("DOMContentLoaded",  () => {
+  const soundButton = document.getElementById("soundButton");
+  const sound = document.getElementById("sound");
+
+  let isPlaying = false; //by default the sound is off
+
+  soundButton.addEventListener("click", function () {
+      if (isPlaying) {
+          sound.pause();
+          sound.currentTime = 0; // plays from the begining 
+          isPlaying = false;
+          soundButton.innerHTML = '<img src="./assets/sound.png" title="Play Sound">'; // change icon
+      } else {
+          sound.play();
+          isPlaying = true;
+          soundButton.innerHTML = '<img src="./assets/sleep.png" title="Pause Sound">';
+      }
+  });
+});
 
 

@@ -1,9 +1,9 @@
 
   body{
-    position: relative;
+    position: relative; 
     height: 100%;
     width: 100%;
-    background-image: url('./assets/background.jpg'); 
+    background-image: url('./assets/darkmodebg.jpg'); 
     background-size: cover;
  }
 
@@ -12,7 +12,8 @@
     color: rgb(11, 119, 190);
     font-family: "Comic Sans MS", cursive, sans-serif;
     text-align: center;
-    animation: glow 1s ease-in-out infinite alternate;
+    animation: shaking 1s ease-in-out infinite alternate;
+    
  }
 
   input ,mark {
@@ -126,36 +127,38 @@
     opacity: 0;
     
     /* Add animation properties */
+    
    animation: fadeIn 1s ease-in-out infinite alternate; 
   }
   .icon1{
-    background-image: url('./assets/icon1.png' );
+    background-image: url('./assets/planet1.png' );
     left: 25px;
     top: 650px;
+    
   }
   .icon2{
-    background-image: url('./assets/icon2.png' );
+    background-image: url('./assets/planet2.png' );
     right: 120px;
     top: 116px;
   }
   .icon3{
-    background-image: url('./assets/icon3.png' );
+    background-image: url('./assets/planet3.png' );
     top: 18px;
     left: 500px;
 
   }
   .icon4{
-    background-image: url('./assets/icon4.png' );
+    background-image: url('./assets/planet4.png' );
     right: 20px;
     top: 435px;
   }
   .icon5{
-    background-image: url('./assets/icon5.png' );
+    background-image: url('./assets/planet5.png' );
     right: 13px;
     top:  550px;
   }
   .icon6{
-    background-image: url('./assets/icon6.png' );
+    background-image: url('./assets/planet6.png' );
     right: 9px;
     top: 660px;
   }
@@ -198,9 +201,10 @@
     align-items: center;
  }
  #themeIcon{
-  color: rgb(3, 21, 78);
+  background-color: transparent;
+  color: transparent;
   position: absolute;
-  font-size: 2rem;
+  /* font-size: 2rem; */
   right: 60px;
  }
 
@@ -210,13 +214,14 @@
    animation: glow_border 1s ease-in-out infinite alternate;
 }
 
-.h1_dark{
-  color: rgb(9, 156, 167);
+.h1_light{
+  
+  color: rgb(0, 6, 6);
 }
 
-.body_dark{
-filter: invert(1);
-background-image: url('./assets/background-dark.jpg');
+.body_light{
+/* filter: invert(1); */
+background-image: url('./assets/lightmodebg.jpg');
 }
 
 
@@ -245,6 +250,15 @@ background-image: url('./assets/background-dark.jpg');
  }
 }
 
+.soundButton  {
+ color: transparent;
+ background-color: transparent;
+}
+
+img {
+  width: 50px;
+  height: auto ;
+}
 
 @keyframes glow {
   0% {
@@ -270,4 +284,12 @@ background-image: url('./assets/background-dark.jpg');
   to {  
       opacity:1;  
   }  
+}
+
+@keyframes shaking {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, 5px) rotate(5deg); }
+  50% { transform: translate(0, 0) rotate(0eg); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
 }
