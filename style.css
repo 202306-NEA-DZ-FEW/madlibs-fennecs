@@ -1,5 +1,6 @@
 
   body{
+    position: relative;
     height: 100%;
     width: 100%;
     background-image: url('./assets/background.jpg'); 
@@ -122,42 +123,52 @@
     height: 70px;
     background-size: cover;
     background-repeat: no-repeat;
+    opacity: 0;
+    
+    /* Add animation properties */
+   animation: fadeIn 1s ease-in-out infinite alternate; 
   }
   .icon1{
     background-image: url('./assets/icon1.png' );
-    left: 13px;
-    top: 345px;
+    left: 25px;
+    top: 650px;
   }
   .icon2{
     background-image: url('./assets/icon2.png' );
-    right: 0px;
+    right: 120px;
     top: 116px;
   }
   .icon3{
     background-image: url('./assets/icon3.png' );
-    top: 50px;
-    left: 60px;
+    top: 18px;
+    left: 500px;
+
   }
   .icon4{
     background-image: url('./assets/icon4.png' );
     right: 20px;
-    top: 350px;
+    top: 435px;
   }
   .icon5{
     background-image: url('./assets/icon5.png' );
     right: 13px;
-    top: 302px;
+    top:  550px;
   }
   .icon6{
     background-image: url('./assets/icon6.png' );
     right: 9px;
-    top: 455px;
+    top: 660px;
   }
   .icon7{
     background-image: url('./assets/icon7.png' );
+    top: 330px;
+    left: 35px;
+
   }
   .icon8{
     background-image: url('./assets/icon8.png' );
+    top: 180px;
+    left: 500px;
   }
 
 .madLibsPreview {
@@ -194,7 +205,7 @@
  }
 
  .madlibs_dark{
-  color: black;
+   color: black;
    background-color: #f8f8f8;
    animation: glow_border 1s ease-in-out infinite alternate;
 }
@@ -250,4 +261,13 @@ background-image: url('./assets/background-dark.jpg');
   100% {
       box-shadow: 0 0 0px 10px #14a423;
       }
+}
+@keyframes fadeIn {  
+  from {  
+      opacity:0;  
+  }  
+
+  to {  
+      opacity:1;  
+  }  
 }

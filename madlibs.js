@@ -168,7 +168,7 @@ let h1=document.querySelector('h1')
 let body=document.querySelector('body')
 
 theme_button.addEventListener("click",()=>{
-  console.log(theme_button.firstElementChild.innerText)
+  
   const materialIcon = document.createElement('i');
  
   if(theme_button.firstElementChild.innerText ==="brightness_4"){
