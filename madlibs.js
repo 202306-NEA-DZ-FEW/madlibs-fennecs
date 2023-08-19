@@ -146,17 +146,6 @@ getRawStory().then(parseStory).then((processedStory) => {
       madLibsPreview.appendChild(span_2)
 
     }
-    // Entre button fonctionality 
-    const inputs = document.querySelectorAll('input');
-    inputs.forEach((input, index) => {
-      input.addEventListener('keyup', function (event) {
-        if (event.code === 'Enter') {
-          event.preventDefault(); // Prevent default Enter key behavior
-          const nextIndex = (index + 1) % inputs.length;
-          inputs[nextIndex].focus(); // Move focus to the next input
-        }
-      });
-    });
 
   })
 
