@@ -158,11 +158,11 @@ getRawStory().then(parseStory).then((processedStory) => {
   let body = document.querySelector('body')
   let isLightmode = false  // by default the dark mode is on 
   theme_button.addEventListener("click", () => {
-
     if (isLightmode) {
       //dark mode codes lies here
       theme_button.innerHTML = '<span class="darkBtn">Light Mode </span><img src="./assets/sun.png" title="light!">';
       body.classList.remove('body_light');
+      h1.classList.remove('h1_light');
       isLightmode = !isLightmode;
       madLibsEdit.classList.remove('madlibs_dark')
       madLibsPreview.classList.add('madlibs_dark')
@@ -172,6 +172,7 @@ getRawStory().then(parseStory).then((processedStory) => {
 
       theme_button.innerHTML = '<span class="lightBtn">Dark Mode </span><img src="./assets/moon.png" title="Darkness consumes!">'; // change icon
       body.classList.add('body_light');
+      h1.classList.add('h1_light');
       madLibsEdit.classList.add('madlibs_dark')
       madLibsPreview.classList.remove('madlibs_dark')
       /**add the rest changes */
