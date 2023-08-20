@@ -215,43 +215,39 @@ getRawStory().then(parseStory).then((processedStory) => {
   /*The DOMContentLoaded event fires when the DOM content is loaded,
    without waiting for images and stylesheets to finish loading.*/
 
+  const soundButton = document.getElementById("soundButton");
+  const sound = document.getElementById("sound");
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const soundButton = document.getElementById("soundButton");
-    const sound = document.getElementById("sound");
+  let isPlaying = false; //by default the sound is off
 
-    let isPlaying = false; //by default the sound is off
-
-    soundButton.addEventListener("click", function () {
-      if (isPlaying) {
-        sound.pause();
-        sound.currentTime = 0; // plays from the begining 
-        isPlaying = false;
-        soundButton.innerHTML = '<img src="./assets/sound.png" title="Play Sound">'; // change icon
-      } else {
-        sound.play();
-        isPlaying = true;
-        soundButton.innerHTML = '<img src="./assets/sleep.png" title="Pause Sound">';
-      }
-    });
-
-    /* I added an event listner so that the translation scripts only activates when button is clicked */
-
-    translateButton = document.getElementById("google_translate_element")
-    translateButton.addEventListener("click", googleTranslateElementInit)
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
-        'google_translate_element'
-      );
+  soundButton.addEventListener("click", function () {
+    if (isPlaying) {
+      sound.pause();
+      sound.currentTime = 0; // plays from the begining 
+      isPlaying = false;
+      soundButton.innerHTML = '<img src="./assets/sound.png" title="Play Sound">'; // change icon
+    } else {
+      sound.play();
+      isPlaying = true;
+      soundButton.innerHTML = '<img src="./assets/sleep.png" title="Pause Sound">';
     }
-
-    const script = document.createElement('script');
-    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    document.head.appendChild(script);
-
-
   });
+
+  /* I added an event listner so that the translation scripts only activates when button is clicked */
+
+  translateButton = document.getElementById("google_translate_element")
+  translateButton.addEventListener("click", googleTranslateElementInit)
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+      'google_translate_element'
+    );
+  }
+
+  const script = document.createElement('script');
+  script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  document.head.appendChild(script);
+
 
 
 });
