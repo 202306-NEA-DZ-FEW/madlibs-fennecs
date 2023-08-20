@@ -150,106 +150,109 @@ getRawStory().then(parseStory).then((processedStory) => {
   })
 
 
-});
-// Manage theme fonctionality (Dark mode ,Ligth mode)
-let theme_button = document.querySelector("#themeIcon")
-let h1 = document.getElementById('heading')
-let body = document.querySelector('body')
-let isLightmode = false  // by default the dark mode is on 
-theme_button.addEventListener("click", () => {
+  // Manage theme fonctionality (Dark mode ,Ligth mode)
+  let theme_button = document.querySelector("#themeIcon")
+  let h1 = document.getElementById('heading')
+  let body = document.querySelector('body')
+  let isLightmode = false  // by default the dark mode is on 
+  theme_button.addEventListener("click", () => {
 
-  if (isLightmode) {
-    //dark mode codes lies here
-    theme_button.innerHTML = '<img src="./assets/sun.png" title="light!">';
-    body.classList.remove('body_light');
-    isLightmode = false;
-    madLibsEdit.classList.remove('madlibs_dark')
-    madLibsPreview.classList.add('madlibs_dark')
+    if (isLightmode) {
+      //dark mode codes lies here
+      theme_button.innerHTML = '<img src="./assets/sun.png" title="light!">';
+      body.classList.remove('body_light');
+      isLightmode = !isLightmode;
+      madLibsEdit.classList.remove('madlibs_dark')
+      madLibsPreview.classList.add('madlibs_dark')
 
-  } else {
-    //light mode codes lies here
-
-    theme_button.innerHTML = '<img src="./assets/moon.png" title="Darkness consumes!">'; // change icon
-    body.classList.add('body_light');
-    madLibsEdit.classList.add('madlibs_dark')
-    madLibsPreview.classList.remove('madlibs_dark')
-    /**add the rest changes */
-
-    isLightmode = true;
-
-  }
-
-
-  // const materialIcon = document.createElement('i');
-
-  // if(theme_button.firstElementChild.innerText ==="brightness_4"){
-  //   theme_button.firstElementChild.innerText="dark_mode"
-
-  // }else{
-  //   theme_button.firstElementChild.innerText="brightness_4"
-  // }
-
-
-})
-
-
-
-// reset button fonctionality
-const reset = document.querySelector('#reset')
-//#endregion
-
-reset.addEventListener("click", () => {
-  const all_input = document.querySelectorAll('input')
-  const all_mark = document.querySelectorAll('mark')
-  all_input.forEach(item => {
-    item.value = ''
-  })
-  all_mark.forEach(item => {
-    item.innerText = item.getAttribute('data_default')
-  })
-})
-
-/*Adding Sound functionality*/
-
-/*The DOMContentLoaded event fires when the DOM content is loaded,
- without waiting for images and stylesheets to finish loading.*/
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const soundButton = document.getElementById("soundButton");
-  const sound = document.getElementById("sound");
-
-  let isPlaying = false; //by default the sound is off
-
-  soundButton.addEventListener("click", function () {
-    if (isPlaying) {
-      sound.pause();
-      sound.currentTime = 0; // plays from the begining 
-      isPlaying = false;
-      soundButton.innerHTML = '<img src="./assets/sound.png" title="Play Sound">'; // change icon
     } else {
-      sound.play();
-      isPlaying = true;
-      soundButton.innerHTML = '<img src="./assets/sleep.png" title="Pause Sound">';
+      //light mode codes lies here
+
+      theme_button.innerHTML = '<img src="./assets/moon.png" title="Darkness consumes!">'; // change icon
+      body.classList.add('body_light');
+      madLibsEdit.classList.add('madlibs_dark')
+      madLibsPreview.classList.remove('madlibs_dark')
+      /**add the rest changes */
+
+      isLightmode = !isLightmode;
+
     }
-  });
+
+
+    // const materialIcon = document.createElement('i');
+
+    // if(theme_button.firstElementChild.innerText ==="brightness_4"){
+    //   theme_button.firstElementChild.innerText="dark_mode"
+
+    // }else{
+    //   theme_button.firstElementChild.innerText="brightness_4"
+    // }
+
+
+  })
+
+
+
+  // reset button fonctionality
+  const reset = document.querySelector('#reset')
+  //#endregion
+
+  reset.addEventListener("click", () => {
+    const all_input = document.querySelectorAll('input')
+    const all_mark = document.querySelectorAll('mark')
+    all_input.forEach(item => {
+      item.value = ''
+    })
+    all_mark.forEach(item => {
+      item.innerText = item.getAttribute('data_default')
+    })
+  })
+
+  /*Adding Sound functionality*/
+
+  /*The DOMContentLoaded event fires when the DOM content is loaded,
+   without waiting for images and stylesheets to finish loading.*/
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const soundButton = document.getElementById("soundButton");
+    const sound = document.getElementById("sound");
+
+    let isPlaying = false; //by default the sound is off
+
+    soundButton.addEventListener("click", function () {
+      if (isPlaying) {
+        sound.pause();
+        sound.currentTime = 0; // plays from the begining 
+        isPlaying = false;
+        soundButton.innerHTML = '<img src="./assets/sound.png" title="Play Sound">'; // change icon
+      } else {
+        sound.play();
+        isPlaying = true;
+        soundButton.innerHTML = '<img src="./assets/sleep.png" title="Pause Sound">';
+      }
+    });
 
     /* I added an event listner so that the translation scripts only activates when button is clicked */
 
-  translateButton = document.getElementById("google_translate_element")
-  translateButton.addEventListener("click", googleTranslateElementInit)
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-      { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
-      'google_translate_element'
-    );
-  }
+    translateButton = document.getElementById("google_translate_element")
+    translateButton.addEventListener("click", googleTranslateElementInit)
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+        'google_translate_element'
+      );
+    }
 
-  const script = document.createElement('script');
-  script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-  document.head.appendChild(script);
+    const script = document.createElement('script');
+    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.head.appendChild(script);
+
+
+  });
 
 
 });
+
 
 
