@@ -152,6 +152,8 @@ getRawStory().then(parseStory).then((processedStory) => {
 
   // Manage theme fonctionality (Dark mode ,Ligth mode)
   let theme_button = document.querySelector("#themeIcon")
+  theme_button.innerHTML = '<span class="darkBtn">Light Mode </span><img src="./assets/sun.png" title="light!">';
+
   let h1 = document.getElementById('heading')
   let body = document.querySelector('body')
   let isLightmode = false  // by default the dark mode is on 
@@ -159,7 +161,7 @@ getRawStory().then(parseStory).then((processedStory) => {
 
     if (isLightmode) {
       //dark mode codes lies here
-      theme_button.innerHTML = '<img src="./assets/sun.png" title="light!">';
+      theme_button.innerHTML = '<span class="darkBtn">Light Mode </span><img src="./assets/sun.png" title="light!">';
       body.classList.remove('body_light');
       isLightmode = !isLightmode;
       madLibsEdit.classList.remove('madlibs_dark')
@@ -168,7 +170,7 @@ getRawStory().then(parseStory).then((processedStory) => {
     } else {
       //light mode codes lies here
 
-      theme_button.innerHTML = '<img src="./assets/moon.png" title="Darkness consumes!">'; // change icon
+      theme_button.innerHTML = '<span class="lightBtn">Dark Mode </span><img src="./assets/moon.png" title="Darkness consumes!">'; // change icon
       body.classList.add('body_light');
       madLibsEdit.classList.add('madlibs_dark')
       madLibsPreview.classList.remove('madlibs_dark')

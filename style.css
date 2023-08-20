@@ -235,6 +235,20 @@ main {
   /* font-size: 2rem; */
   right: 60px;
   z-index: 2;
+  cursor: pointer
+}
+
+.lightBtn,
+.darkBtn {
+
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  top: -1rem;
+
 }
 
 .madlibs_dark {
