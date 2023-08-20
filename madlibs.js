@@ -256,5 +256,36 @@ getRawStory().then(parseStory).then((processedStory) => {
 
 });
 
+const downloadButton = document.getElementById('download');
+// const contentToDownload = document.getElementsByClassName('madLibsPreview');
+
+downloadButton.addEventListener('click', () => {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+  const Children_element = madLibsPreview.children
+  const innerTextArray = [];
+  let count=0
+  for (const childElement of Children_element) {
+  if(count===5){
+    innerTextArray.push("\n")
+    innerTextArray.push(childElement.innerText)
+    count=0
+  }else{
+    innerTextArray.push(childElement.innerText);
+    count++
+  }
+  
+  }
+  const text=innerTextArray.reduce((total,val)=>{
+    return total.concat(" ", val)
+  }," ")
+  pdf.setFontSize(12);
+  pdf.setFont("courier");
+  pdf.text(text,100 ,20, 'center')
+  pdf.save('madlib_story.pdf')
+  alert("your story download successfuly")
+});
+
+
 
 
