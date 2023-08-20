@@ -158,20 +158,13 @@ let body = document.querySelector('body')
 let isLightmode = false  // by default the dark mode is on 
 theme_button.addEventListener("click", () => {
 
-
-
-
   if (isLightmode) {
     //dark mode codes lies here
-
-    theme_button.innerHTML = '<img src="./assets/sun.png" title="Bring up the light! ">';
+    theme_button.innerHTML = '<img src="./assets/sun.png" title="light!">';
     body.classList.remove('body_light');
     isLightmode = false;
     madLibsEdit.classList.remove('madlibs_dark')
     madLibsPreview.classList.add('madlibs_dark')
-
-
-
 
   } else {
     //light mode codes lies here
@@ -184,20 +177,7 @@ theme_button.addEventListener("click", () => {
 
     isLightmode = true;
 
-
-
-
-
-
-
-
-
-
   }
-
-
-
-
 
 
   // const materialIcon = document.createElement('i');
@@ -254,7 +234,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+    /* I added an event listner so that the translation scripts only activates when button is clicked */
 
+  translateButton = document.getElementById("google_translate_element")
+  translateButton.addEventListener("click", googleTranslateElementInit)
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+      'google_translate_element'
+    );
+  }
+
+  const script = document.createElement('script');
+  script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  document.head.appendChild(script);
 
 
 });

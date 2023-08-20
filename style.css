@@ -8,11 +8,12 @@
  }
 
   h1{
+    margin-top: 0%;
     font-size: 80px;
-    color: rgb(11, 119, 190);
+    color: rgb(42, 215, 228);
     font-family: "Comic Sans MS", cursive, sans-serif;
     text-align: center;
-    animation: shaking 1s ease-in-out infinite alternate;
+    animation: shaking 10s ease-in-out infinite alternate;
     
  }
 
