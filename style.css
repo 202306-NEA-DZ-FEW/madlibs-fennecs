@@ -1,9 +1,9 @@
 
   body{
-    position: relative; 
+    position: absolute; 
     height: 100%;
     width: 100%;
-    background-image: url('./assets/darkmodebg.jpg'); 
+    background-image: url('./assets/darkmodebg.jpg') ; 
     background-size: cover;
  }
 
@@ -204,6 +204,7 @@
   background-color: transparent;
   color: transparent;
   position: absolute;
+  border: none;
   /* font-size: 2rem; */
   right: 60px;
  }
@@ -247,6 +248,10 @@ background-image: url('./assets/lightmodebg.jpg');
  .madLibsEdit ,.madLibsPreview{
     margin: 50px 20px;
     font-size: 15px;
+ }
+ #themeIcon{
+  
+  right: -50px;
  }
 }
 
