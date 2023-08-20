@@ -16,7 +16,7 @@
     
  }
 
-  input ,mark {
+  input {
     width: 20%;
     padding: 2px 20px;
     margin: 2px 10px;
@@ -25,6 +25,16 @@
     text-align: center;
     display: inline-block;
   }
+  mark {
+    width: 15%;
+    padding: 2px 18px;
+    margin: 2px 6px;
+    border: 2px dashed #7442f1;
+    border-radius: 4px;
+    text-align: center;
+    display: inline-block;
+    font-size:  18px; ;
+  }
 
   main{
    
@@ -32,6 +42,13 @@
     justify-content: space-around;
     flex-direction: row;
   }
+
+  .button_content{
+   margin-top: 30px 0 20px 0;
+   
+  }
+
+
   .button {
     margin: 1rem;
     padding: 0;
