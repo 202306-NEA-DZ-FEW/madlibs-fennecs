@@ -8,6 +8,8 @@ body {
 
   background-image: url('./assets/darkmodebg.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h1 {
@@ -16,7 +18,7 @@ h1 {
   color: rgb(42, 215, 228);
   font-family: "Comic Sans MS", cursive, sans-serif;
   text-align: center;
-  animation: shaking 10s ease-in-out infinite alternate;
+  animation: shaking 2.5s ease-in-out infinite alternate;
 
 }
 
@@ -126,7 +128,6 @@ main {
   margin-top: 60px;
   width: 100%;
   padding-right: 1rem;
-  padding-left: 1rem;
   margin-right: auto;
   margin-left: auto;
   box-sizing: border-box;
@@ -135,22 +136,27 @@ main {
 
 .madLibsPreview {
   margin: 0 50px;
-  background-color: rgba(255, 0, 0, 0.05);
+  background-color: rgba(47, 144, 230, 0.97);
   width: 100%;
   color: #fff;
   font-size: 22px;
   /* Adjust as needed */
   font-family: 'Chewy', cursive, sans-serif;
+  padding: 1rem;
+  margin-bottom: 2rem;
+
 }
 
 .madLibsEdit {
   margin: 0 50px;
-  background-color: rgba(0, 128, 0, 0.05);
+  background-color: rgba(70, 35, 149, 0.9);
   width: 100%;
   color: #fff;
   font-size: 22px;
   /* Adjust as needed */
   font-family: 'Chewy', cursive, sans-serif;
+  padding: .9rem;
+  margin-bottom: 2rem;
 }
 
 
@@ -232,11 +238,11 @@ main {
 
 /* Small screens (mobile devices) */
 @media (max-width: 767px) {
-  body {
+  /*   body {
     background-image: linear-gradient(to right top, #262626, #24242a, #22222e, #1e2032, #191f36, #142139, #0b243c, #00263f, #002b3f, #002f3c, #003237, #023532);
     background-repeat: no-repeat;
     background-attachment: fixed;
-  }
+  } */
 
   main {
     padding: 0 30px;
@@ -251,9 +257,12 @@ main {
 
   .madLibsEdit,
   .madLibsPreview {
-    margin: 50px 20px;
-    font-size: 15px;
+    margin: 1.5rem 1rem;
+    font-size: 1.2rem;
+    padding: 1rem;
   }
+
+
 
   #themeIcon {
     position: absolute;
@@ -262,11 +271,11 @@ main {
     font-size: 1rem;
   }
 
-  .body_light {
+  /*   .body_light {
     background-image: linear-gradient(to right top, #c2c7c5, #a7c5c2, #87c2c9, #69bcd8, #57b3e9, #4db6f0, #40b9f8, #2ebcff, #00ceff, #00dfff, #00effd, #32fef3);
     background-repeat: no-repeat;
     background-attachment: fixed;
-  }
+  } */
 }
 
 .soundButton {
