@@ -1,7 +1,7 @@
 html,
 body {
-  width: 100dvw;
-  height: 100dvh;
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -19,7 +19,7 @@ h1 {
   font-family: "Comic Sans MS", cursive, sans-serif;
   text-align: center;
   animation: shaking 3s ease-in-out infinite alternate;
-  animation-delay: 2.5s;
+  animation-delay: 2s;
 
 }
 
@@ -144,7 +144,7 @@ main {
   /* Adjust as needed */
   font-family: 'Chewy', cursive, sans-serif;
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 
 
 }
@@ -159,8 +159,8 @@ main {
   font-family: 'Chewy', cursive, sans-serif;
   padding: .9rem;
   margin-bottom: 2rem;
-  animation: jackInTheBox 1.8s ease-in-out;
-  animation-delay: 1s;
+  animation: jackInTheBox 1.7s ease-in-out;
+  animation-delay: .8s;
   animation-iteration-count: 1;
 }
 
@@ -223,14 +223,16 @@ main {
     flex-direction: column;
   }
 
-  .madLibsEdit,
+  /*   .madLibsEdit,
   .madLibsPreview {
     margin: 50px 20px;
-  }
+  } */
 
   .madLibsEdit,
   .madLibsPreview {
-    margin: 50px 20px;
+    margin: .7rem .9rem;
+    font-size: 1.2rem;
+    padding: 1rem;
   }
 
   #themeIcon {
@@ -262,7 +264,7 @@ main {
 
   .madLibsEdit,
   .madLibsPreview {
-    margin: 1.5rem 1rem;
+    margin: .7rem .9rem;
     font-size: 1.2rem;
     padding: 1rem;
   }
