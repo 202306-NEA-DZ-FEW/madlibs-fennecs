@@ -159,8 +159,9 @@ main {
   font-family: 'Chewy', cursive, sans-serif;
   padding: .9rem;
   margin-bottom: 2rem;
-  animation: jackInTheBox 1.7s ease-in-out;
+  animation: jackInTheBox 1.7s ease-in-out forwards;
   animation-delay: .1s;
+  animation-iteration-count: 1;
 }
 
 
