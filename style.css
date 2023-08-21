@@ -235,7 +235,7 @@ main {
 
   #themeIcon {
     position: absolute;
-    top: 0;
+    top: 1rem;
     right: 1rem;
     font-size: 1rem;
   }
@@ -271,7 +271,7 @@ main {
 
   #themeIcon {
     position: absolute;
-    top: 0;
+    top: 1rem;
     right: 1rem;
     font-size: 1rem;
   }
