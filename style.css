@@ -1,7 +1,11 @@
+html,
 body {
-  position: absolute;
-  height: 100%;
-  width: 100%;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+body {
+
   background-image: url('./assets/darkmodebg.jpg');
   background-size: cover;
 }
@@ -208,38 +212,60 @@ main {
     flex-direction: column;
   }
 
-  .madLibsEdit, .madLibsPreview {
-    margin: 50px 20px;
-  }
-  
   .madLibsEdit,
   .madLibsPreview {
     margin: 50px 20px;
+  }
+
+  .madLibsEdit,
+  .madLibsPreview {
+    margin: 50px 20px;
+  }
+
+  #themeIcon {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 1rem;
   }
 }
 
 /* Small screens (mobile devices) */
 @media (max-width: 767px) {
+  body {
+    background-image: linear-gradient(to right top, #262626, #24242a, #22222e, #1e2032, #191f36, #142139, #0b243c, #00263f, #002b3f, #002f3c, #003237, #023532);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
   main {
     padding: 0 30px;
     flex-direction: column;
     align-items: center;
   }
+
   h1 {
     font-size: 40px;
     text-align: center;
   }
-  .madLibsEdit, .madLibsPreview {
+
+  .madLibsEdit,
+  .madLibsPreview {
     margin: 50px 20px;
     font-size: 15px;
   }
+
   #themeIcon {
-    right: auto;
-    left: 10px;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 1rem;
   }
 
-  .icons{
-    display: none;
+  .body_light {
+    background-image: linear-gradient(to right top, #c2c7c5, #a7c5c2, #87c2c9, #69bcd8, #57b3e9, #4db6f0, #40b9f8, #2ebcff, #00ceff, #00dfff, #00effd, #32fef3);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 }
 
