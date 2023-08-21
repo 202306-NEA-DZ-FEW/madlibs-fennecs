@@ -18,7 +18,8 @@ h1 {
   color: rgb(42, 215, 228);
   font-family: "Comic Sans MS", cursive, sans-serif;
   text-align: center;
-  animation: shaking 2.5s ease-in-out infinite alternate;
+  animation: shaking 3s ease-in-out infinite alternate;
+  animation-delay: 2s;
 
 }
 
@@ -145,6 +146,7 @@ main {
   padding: 1rem;
   margin-bottom: 2rem;
 
+
 }
 
 .madLibsEdit {
@@ -157,6 +159,8 @@ main {
   font-family: 'Chewy', cursive, sans-serif;
   padding: .9rem;
   margin-bottom: 2rem;
+  animation: jackInTheBox 1.7s ease-in-out;
+  animation-delay: .1s;
 }
 
 
@@ -286,6 +290,75 @@ main {
 img {
   width: 50px;
   height: auto;
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 @keyframes glow {
