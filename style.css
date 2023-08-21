@@ -160,7 +160,7 @@ main {
   padding: .9rem;
   margin-bottom: 2rem;
   animation: jackInTheBox 1.8s ease-in-out;
-  animation-delay: 1.1s;
+  animation-delay: 1s;
   animation-iteration-count: 1;
 }
 
