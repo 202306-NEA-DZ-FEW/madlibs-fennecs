@@ -1,3 +1,417 @@
-/**
- * Your CSS goes here.
- */
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+
+  background-image: url('./assets/darkmodebg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1 {
+  margin-top: 0%;
+  font-size: 80px;
+  color: rgb(42, 215, 228);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-align: center;
+  animation: shaking 3s ease-in-out infinite alternate;
+  animation-delay: 2s;
+
+}
+
+input,
+mark {
+  width: 20%;
+  padding: 2px 20px;
+  margin: 2px 10px;
+  border: 2px dashed #7442f1;
+  border-radius: 4px;
+  text-align: center;
+  display: inline-block;
+
+}
+
+mark {
+  font-size: 16px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+main {
+
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.button_content {
+  margin-top: 30px 0 20px 0;
+
+}
+
+
+.button {
+  margin: 1rem;
+  padding: 0;
+  border: none;
+  color: #fff;
+  background-color: transparent;
+  font-family: 'Press Start 2P', cursive;
+  color: #ece4b3;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 78px;
+  height: 75px;
+  border-radius: 50%;
+  background-size: contain;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+  background: linear-gradient(135deg, #1e2a3a, #263748);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+  text-align: center;
+
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: #130f40;
+  border-radius: 50%;
+  opacity: 0.4;
+  z-index: -1;
+  background-size: contain;
+  transition: opacity 0.3s, transform 0.3s;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/star.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  background-color: #f39c12;
+  text-shadow: 0 0 10px #fff, 0 0 20px #f39c12, 0 0 30px #f39c12, 0 0 40px #f39c12;
+}
+
+.button:hover::before {
+  opacity: 0.5;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.container {
+  text-align: center;
+  margin-top: 60px;
+  width: 100%;
+  padding-right: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.madLibsPreview {
+  margin: 0 50px;
+  background-color: rgba(47, 144, 230, 0.97);
+  width: 100%;
+  color: #fff;
+  font-size: 22px;
+  /* Adjust as needed */
+  font-family: 'Chewy', cursive, sans-serif;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+
+
+}
+
+.madLibsEdit {
+  margin: 0 50px;
+  background-color: rgba(70, 35, 149, 0.9);
+  width: 100%;
+  color: #fff;
+  font-size: 22px;
+  /* Adjust as needed */
+  font-family: 'Chewy', cursive, sans-serif;
+  padding: .9rem;
+  margin-bottom: 2rem;
+  animation: jackInTheBox 1.7s ease-in-out;
+  animation-delay: .8s;
+  animation-iteration-count: 1;
+}
+
+
+
+.button_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#themeIcon {
+  background-color: transparent;
+  color: transparent;
+  position: absolute;
+  border: none;
+  /* font-size: 2rem; */
+  right: 60px;
+  z-index: 2;
+  cursor: pointer
+}
+
+.lightBtn,
+.darkBtn {
+
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  top: -1rem;
+
+}
+
+.madlibs_dark {
+  color: black;
+  background-color: #f8f8f8;
+  animation: glow_border 1s ease-in-out infinite alternate;
+}
+
+.h1_light {
+
+  color: rgb(233, 144, 11);
+}
+
+.body_light {
+  /* filter: invert(1); */
+  background-image: url('./assets/lightmodebg.jpg');
+}
+
+
+
+
+/* Medium screens (tablets and smaller laptops) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  main {
+    padding: 0 70px;
+    flex-direction: column;
+  }
+
+  /*   .madLibsEdit,
+  .madLibsPreview {
+    margin: 50px 20px;
+  } */
+
+  .madLibsEdit,
+  .madLibsPreview {
+    margin: .7rem .9rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  #themeIcon {
+    position: absolute;
+    top: .2rem;
+    right: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 767px) {
+  /*   body {
+    background-image: linear-gradient(to right top, #262626, #24242a, #22222e, #1e2032, #191f36, #142139, #0b243c, #00263f, #002b3f, #002f3c, #003237, #023532);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  } */
+
+  main {
+    padding: 0 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .madLibsEdit,
+  .madLibsPreview {
+    margin: .7rem .9rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+
+
+  #themeIcon {
+    position: absolute;
+    top: .2rem;
+    right: 1rem;
+    font-size: 1rem;
+  }
+
+  /*   .body_light {
+    background-image: linear-gradient(to right top, #c2c7c5, #a7c5c2, #87c2c9, #69bcd8, #57b3e9, #4db6f0, #40b9f8, #2ebcff, #00ceff, #00dfff, #00effd, #32fef3);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  } */
+}
+
+.soundButton {
+  color: transparent;
+  background-color: transparent;
+}
+
+img {
+  width: 50px;
+  height: auto;
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #bb2136, 0 0 40px #bb2136, 0 0 50px #bb2136, 0 0 60px #bb2136, 0 0 70px #bb2136;
+  }
+
+  100% {
+    text-shadow: 0 0 20px #fff, 0 0 30px #14a423, 0 0 40px #14a423, 0 0 50px #14a423, 0 0 60px #14a423, 0 0 70px #14a423, 0 0 80px #14a423;
+  }
+}
+
+@keyframes glow_border {
+  0% {
+    box-shadow: 0 0 0px 10px #bb2136;
+  }
+
+  100% {
+    box-shadow: 0 0 0px 10px #14a423;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shaking {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(5px, 5px) rotate(5deg);
+  }
+
+  50% {
+    transform: translate(0, 0) rotate(0eg);
+  }
+
+  75% {
+    transform: translate(-5px, 5px) rotate(-5deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}

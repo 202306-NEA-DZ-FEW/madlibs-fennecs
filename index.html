@@ -1,17 +1,82 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div class='madLibsEdit'>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width">
+  <title>The Cosmic Party | By Fennecs Team</title>
+  <link rel="icon"
+    type="image/x-icon"
+    href="./assets/sun.png"> <!--added a favicon from assets-->
+  <link href="style.css"
+    rel="stylesheet"
+    type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+
+</head>
+
+<body loading="lazy">
+  <div class="container">
+    <!--  <div class="icons">
+      <div class="icon1"></div>
+      <div class="icon2"></div>
+      <div class="icon3"></div>
+      <div class="icon4"></div>
+      <div class="icon5"></div>
+      <div class="icon6"></div>
+      <div class="icon7"></div>
+      <div class="icon8"></div>
+
+
+    </div> -->
+    <button id="themeIcon"><img src="./assets/sun.png"
+        title="Dark/Light Mode"></button>
+    <h1 id="heading">Planets Party </h1>
+    <main>
+      <div class="madLibsEdit "></div>
+      <div class="madLibsPreview madlibs_dark"></div>
+    </main>
+
+    <div class="button_content">
+      <!--Pictures were super large which made the page rendering difficult-->
+      <button class="button"
+        id="download"><img src="./assets/save.png"
+          title="Save"></button>
+      <button class="button"
+        id="reset"><img src="./assets/reset.png"
+          title="Reset"></button>
+      <button class="button"
+        id="google_translate_element"><img src="./assets/translate.png"
+          title="translate"></button>
+      <button class="button"
+        id="soundButton"> <img src="./assets/music.png"
+          title="Play Sound"></button>
     </div>
-    <div class='madLibsPreview'>
-    </div>
-    <script src="do-not-touch.js"></script>
-    <script src="madlibs.js"></script>
-  </body>
+
+  </div>
+
+  <audio preload="auto"
+    id="sound"
+    loop>
+    <source src="./assets/SpaceGroove.mp3"
+      type="audio/mpeg">
+  </audio>
+
+  <script src="do-not-touch.js"></script>
+  <script src="madlibs.js"></script>
+
+</body>
+
 </html>
