@@ -226,11 +226,11 @@ getRawStory().then(parseStory).then((processedStory) => {
       sound.pause();
       sound.currentTime = 0; // plays from the begining 
       isPlaying = false;
-      soundButton.innerHTML = '<img src="./assets/sound.png" title="Play Sound">'; // change icon
+      soundButton.innerHTML = '<img src="./assets/music.png" title="Play Sound">'; // change icon
     } else {
       sound.play();
       isPlaying = true;
-      soundButton.innerHTML = '<img src="./assets/sleep.png" title="Pause Sound">';
+      soundButton.innerHTML = '<img src="./assets/music.png" title="Pause Sound">';
     }
   });
 
@@ -241,7 +241,6 @@ getRawStory().then(parseStory).then((processedStory) => {
   function googleTranslateElementInit() {
     new google.translate.TranslateElement(
       { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
-      'google_translate_element'
     );
   }
 
